@@ -65,8 +65,13 @@ img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 1.5rem;
+    box-shadow: 5px 10px #c7c5c0;
+    border-radius: 8px;
+    background-color: rgb(247, 266, 226);
+    margin: 0 auto;
+    padding: 16px;
 }
 a {
     color: inherit;
@@ -80,13 +85,7 @@ p {
     height: 2rem;
     width: 2rem;
 }
-.hero.astro>.text.astro {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
+
 .content.astro {
     display: flex;
     flex-direction: row;

@@ -9,10 +9,10 @@ body {
     flex-direction: column;
     gap: 1em;
     --tw-bg-opacity: 1;
-    background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+    background-color: rgb(97 164 188 / var(--tw-bg-opacity));
+    font-family: "Lucida Console", "Courier New", monospace;
     --tw-text-opacity: 1;
-    color: rgb(71 85 105 / var(--tw-text-opacity));
+    color: rgb(26 19 47 / var(--tw-text-opacity));
     gap: 1rem;
 }
 .header.astro {
@@ -74,6 +74,7 @@ a {
 }
 p {
     margin-bottom: 1rem;
+    line-height: 2rem;
 }
 .astro>i {
     height: 2rem;
@@ -92,7 +93,7 @@ p {
     gap: 1rem;
     border-radius: 0.25rem;
     --tw-bg-opacity: 1;
-    background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+    background-color: rgb(247 266 226 / var(--tw-bg-opacity));
     padding: 1rem;
     --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -104,6 +105,7 @@ p {
     text-align: center;
     font-size: 1.5rem;
     line-height: 2rem;
+    font-weight: 600;
 }
 .content.astro>.right.astro {
     flex-basis: 75%;
@@ -169,20 +171,23 @@ p {
 .form-submit.astro {
     border-radius: .25rem;
     --tw-bg-opacity: 1;
-    background-color: rgb(66 133 244 / var(--tw-bg-opacity));
+    background-color: rgb(91 125 177 / var(--tw-bg-opacity));
     padding: .5rem;
     --tw-text-opacity: 1;
-    color: rgb(226 232 240 / var(--tw-text-opacity));
+    color: rgb(247 226 226 / var(--tw-text-opacity));
 }
 .footer.astro {
     --tw-bg-opacity: 1;
-    background-color: rgb(66 133 244 / var(--tw-bg-opacity));
+    background-color: rgb(247 266 226 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
-    color: rgb(226 232 240 / var(--tw-text-opacity));
+    color: rgb(26 19 47 / var(--tw-text-opacity));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
     text-align: center;
+}
+li {
+    line-height: 2rem;
 }

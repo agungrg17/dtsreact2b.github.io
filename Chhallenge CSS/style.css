@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    line-height: inherit;
+}
+.challenge.astro {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+    flex-direction: column;
+    gap: 1em;
+    --tw-bg-opacity: 1;
+    background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+    --tw-text-opacity: 1;
+    color: rgb(71 85 105 / var(--tw-text-opacity));
+    gap: 1rem;
+}
+.header.astro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+.rounded-full {
+    border-radius: 60%;
+    -webkit-border-radius: 60%;
+    -moz-border-radius: 60%;
+    -ms-border-radius: 60%;
+    -o-border-radius: 60%;
+}
+img {
+    max-width: 15%;
+    height: auto;
+}
+.content-container.astro {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    min-width: 800px;
+    max-width: 64rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+.hero.astro {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    text-align: center;
+}
+.hero.astro>h1.astro:first-child {
+    font-size: 2.25rem;
+    line-height: 1.5rem;
+    font-weight: inherit;
+
+}
+.hero.astro>div.astro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+p {
+    margin-bottom: 1rem;
+}
+.astro>i {
+    height: 2rem;
+    width: 2rem;
+}
+.hero.astro>.text.astro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.content.astro {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+    padding: 1rem;
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+}
+.content.astro>.left.astro {
+    flex-basis: 25%;
+    align-self: center;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.content.astro>.right.astro {
+    flex-basis: 75%;
+    text-align: justify;
+}
+.content.astro>.right.astro>p.astro {
+    margin-bottom: 1rem;
+}
+.right-header.astro {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+.right-sub-header.astro {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+.right-sub-content.astro {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-style: italic;
+}
+.right-portofolio.astro {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.portofolio-item.astro {
+    height: 9rem;
+    width: 9rem;
+    border-radius: .75rem;
+    max-width: 100%;
+}
+.form.astro {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form-control.astro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.form-label.astro {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-right: .5rem;
+}
+.form-input.astro {
+    border-radius: .25rem;
+    padding: .5rem;
+}
+.form-area-input.astro {
+    min-height: 12em;
+    border-radius: .25rem;
+    padding: .5rem;
+}
+.form-submit.astro {
+    border-radius: .25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(66 133 244 / var(--tw-bg-opacity));
+    padding: .5rem;
+    --tw-text-opacity: 1;
+    color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+.footer.astro {
+    --tw-bg-opacity: 1;
+    background-color: rgb(66 133 244 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(226 232 240 / var(--tw-text-opacity));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}

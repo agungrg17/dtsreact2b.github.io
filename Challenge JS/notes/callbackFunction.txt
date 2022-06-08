@@ -1,0 +1,79 @@
+1.
+const sorter = (arr, callback) => {
+  let sort = callback(arr);
+  let result = [];
+  sort.map((v, i) => {
+    result.push(`${i + 1}. ${v}`);
+  });
+  return result;
+};
+
+// TODO: Fungsi untuk mengurutkan array of string secara ascending
+// mengembalikan array yang sudah diurutkan
+const sortAscending = (arr) => {
+  return arr.sort();
+};
+
+// TODO: Fungsi untuk mengurutkan array of string secara descending
+// mengembalikan array yang sudah diurutkan
+const sortDescending = (arr) => {
+  return arr.sort((a, b) => b.localeCompare(a));
+};
+
+2.
+const sorter = (names, callback) => {
+  const sorted = callback(names);
+
+  return sorted.map((name, index) => {
+    return `${index + 1}. ${name}`;
+  })
+};
+
+// TODO: Fungsi untuk mengurutkan array of string secara ascending
+// mengembalikan array yang sudah diurutkan
+const sortAscending = (names) => {
+  return names.sort();
+};
+
+// TODO: Fungsi untuk mengurutkan array of string secara descending
+// mengembalikan array yang sudah diurutkan
+const sortDescending = (names) => {
+  return names.sort().reverse();
+};
+
+3.
+const sorter = (data, callback) => callback(data).map((name, index) => `${index+1}. ${name}`);
+
+// TODO: Fungsi untuk mengurutkan array of string secara ascending
+// mengembalikan array yang sudah diurutkan
+const sortAscending = (data) => data.sort();
+
+// TODO: Fungsi untuk mengurutkan array of string secara descending
+// mengembalikan array yang sudah diurutkan
+const sortDescending = (data) => data.sort().reverse();
+
+4.
+const sorter = (namesArray, sortProcess) =>{
+  
+  const result = sortProcess(namesArray);
+  let resultArray = [];
+  let count = 1;
+  for(let i=0; i<result.length;i++){
+    let concat = count +'. '+result[i];
+    resultArray.push(concat);
+    count++;
+  }
+ return resultArray;
+};
+
+// TODO: Fungsi untuk mengurutkan array of string secara ascending
+// mengembalikan array yang sudah diurutkan
+const sortAscending = (namesArray) => {
+  return namesArray.sort();
+};
+
+// TODO: Fungsi untuk mengurutkan array of string secara descending
+// mengembalikan array yang sudah diurutkan
+const sortDescending = (namesArray) => {
+  return namesArray.reverse();
+};

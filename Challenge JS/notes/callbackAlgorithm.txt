@@ -1,0 +1,150 @@
+1.
+const bacaData = (fnCallback) => {
+  let data = [];
+  let counter = 0;
+  let callback = () => {
+    counter++;
+    if (counter === 3) {
+      fnCallback(null, data);
+    }
+  }
+  fs.readFile(file1, (err, data1) => {
+    if (err) return fnCallback(err);
+    data.push(JSON.parse(data1).message.split(' ')[1]);
+    callback();
+  }
+  );
+  fs.readFile(file2, (err, data2) => {
+    if (err) return fnCallback(err);
+    data.push(JSON.parse(data2)[0].message.split(' ')[1]);
+    callback();
+  }
+  );
+  fs.readFile(file3, (err, data3) => {
+    if (err) return fnCallback(err);
+    data.push(JSON.parse(data3)[0].data.message.split(' ')[1]);
+    callback();
+  }
+  );
+};
+
+2.
+const bacaData = (fnCallback) => {
+  let dataresult = [];
+
+  const readingFile1 = (callback, nextStep) => {
+    fs.readFile(file1, (err, data) => {
+      if (err) {
+        callback(err, dataresult)
+        return
+      }
+      const temp = JSON.parse(data)
+      dataresult.push(temp.message.split(' ')[1]);
+      nextStep(callback);
+    });
+  }
+  const readingFile2 = (callback, nextStep) => {
+    fs.readFile(file2, (err, data) => {
+      if (err) {
+        callback(err, dataresult)
+        return
+      }
+      const temp = JSON.parse(data)
+      if (temp.length > 0) {
+        dataresult.push(temp[0].message.split(' ')[1]);
+      };
+      nextStep(callback);
+    });
+  }
+  const readingFile3 = (callback) => {
+    fs.readFile(file3, (err, data) => {
+      if (err) {
+        callback(err, dataresult)
+        return
+      }
+      const temp = JSON.parse(data)
+      if (temp.length > 0) {
+        dataresult.push(temp[0].data.message.split(' ')[1]);
+      }
+      callback(null, dataresult);
+    });
+  }
+  readingFile1(fnCallback, (callback1) => {
+    readingFile2(callback1, (callback2) => {
+      readingFile3(callback2)
+    })
+  })
+
+};
+
+3.
+const bacaData =  (fnCallback) => {
+
+  // Baca file1
+  fs.readFile(file1, 'utf-8', (err, data1) => {
+    if (err){
+      return err;
+    }
+    let hasil1 = JSON.parse(data1);
+    let res1 = hasil1.message.split(" ")[1];
+
+    fs.readFile(file2,'utf-8',(err, data2)=>{
+      if (err){
+        return err;
+      }
+      let hasil2 = JSON.parse(data2);
+      let res2 = hasil2[0].message.split(" ")[1];
+
+      fs.readFile(file3,'utf-8',(err, data3)=>{
+        let hasil3 = JSON.parse(data3);
+        let res3 = hasil3[0].data.message.split(" ")[1];
+
+        let res = [ res1, res2, res3];
+        fnCallback(err, res);
+      })
+    })
+  });
+};
+
+4.
+const bacaData = (callback) => {
+  let data = [];
+  let error = null;
+  let counter = 0;
+  let check = () => {
+    counter++;
+    if (counter === 3) {
+      callback(error, data);
+    }
+  };
+  fs.readFile(file1, (err, data1) => {
+    if (err) {
+      error = err;
+    } else {
+      const parsingData1 = JSON.parse(data1);
+      const splitData1 = parsingData1.message.split(" ")[1];
+      data.push(splitData1);
+    }
+    check();
+  });
+  fs.readFile(file2, (err, data2) => {
+    if (err) {
+      error = err;
+    } else {
+      const parsingData2 = JSON.parse(data2);
+      const splitData2 = parsingData2[0].message.split(" ")[1];
+      data.push(splitData2);
+    }
+    check();
+  });
+  fs.readFile(file3, (err, data3) => {
+    if (err) {
+      error = err;
+    } else {
+      const parsingData3 = JSON.parse(data3);
+      const splitData3 = parsingData3[0].data.message.split(" ")[1];
+      data.push(splitData3);
+    }
+    check();
+  });
+};

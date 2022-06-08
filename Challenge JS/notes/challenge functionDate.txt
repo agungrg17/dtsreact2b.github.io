@@ -1,0 +1,96 @@
+const createDate = (datestemp, recno) => {
+  if (typeof (recno) == 'number') {
+    return `${new Date(datestemp[recno]).valueOf() / 1000}`;
+  } else {
+    let sresult = ''
+    let dataEpoch = []
+    for (item of datestemp) {
+      let sconvert = new Date(item).valueOf() / 1000
+      dataEpoch.push(sconvert)
+    }
+    dataEpoch = dataEpoch.sort()
+    for (item of dataEpoch) {
+      if (sresult != '') {
+        sresult += '-'
+      }
+      sresult += `${item}`
+    }
+    return sresult
+  }
+};
+
+2.
+
+const sortDate = (arr) => {
+  return arr.sort();
+}
+
+// TODO: Buatlah fungsi createDate
+const createDate = (arr, pos = -1) => {
+  let sort = (pos >= 0 && pos < arr.length) ? false : true;
+  let temp = [];
+  arr.map((v) => {
+    temp.push((Date.parse(v) / 1000).toString());
+  });
+  if (sort) {
+    return sortDate(temp).join("-");
+  } else {
+    return temp[pos]
+  }
+}
+
+3.
+
+const createDate = (dates, num) => {
+  const array = [];
+  for (let i = 0; i < dates.length; i++) {
+    const date = new Date(dates[i]).getTime() / 1000;
+    const dateString = date.toString();
+    array.push(dateString);
+  }
+
+  if (num === undefined) {
+    const sortDate = array.sort((a, b) => a - b);
+    return sortDate.join("-");
+  } else {
+    const sortDate = array.sort((a, b) => a + b);
+    return array[num];
+  }
+};
+
+4.
+
+const createDate = (dates, index = -1) => {
+  const convertToSeconds = dates.map(date => new Date(date).getTime() / 1000);
+  const results = (index == -1) ? convertToSeconds : convertToSeconds.splice(index, 1);
+
+  return results.sort((a, b) => a - b).join("-");
+};
+
+5. 
+
+const createDate = (date, index) => {
+  const resultEpoch = [];
+  if (index === undefined) {
+    for (let i = 0; i < date.length; i++) {
+      const result = new Date(date[i]).getTime() / 1000;
+      resultEpoch.push(result);
+    }
+    resultEpoch.sort((a, b) => a - b);
+    return resultEpoch.join("-");
+  } else {
+    const result = new Date(date[index]).getTime() / 1000;
+    resultEpoch.push(result);
+    return resultEpoch.join("-");
+  }
+};
+
+6.
+
+const createDate = (dateList, index) => {
+  const epochDates = dateList.map((date) => Date.parse(date) / 1000);
+
+  return index !== undefined
+    ? epochDates[index].toString()
+    : epochDates.sort().join("-");
+};
